@@ -6,7 +6,7 @@
 
 <title>Min_miN</title>
 
-<style>
+ <style>
 
  H1 {
    font-size:80px;
@@ -16,24 +16,30 @@
    text-align: center;
  }
 
- .main{
-   color:green;
+ .menu{
+   text-decoration: none;
    font-size:50px;
    text-align:center;
    border:5px green solid;
 }
-
-
-</style>
-
+ a:link {color:black; text-decoration: none;}
+ a:visited{color:gray;}
+ </style>
 </head>
 
 <body>
-<H1>Min_miN</H1>
 
-    <input type="button" value="버튼"  onclick="alert('누르지마 간지러')">
-    <input type="text" onchange="alert('changed')">
-    <input type="text" onkeydown="alert('key down')">
+ <h1><a href="index.html">Min_miN</a></h1>
+
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.Color = 'white';
+  ">
+
+    <input type="button" value="day"onclick="
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.Color = 'black';
+  ">
 
 <script>
 
@@ -41,12 +47,11 @@
 
 </script>
 
- <div class="main">
+  <div class="menu">
      <a href="photo.html">사진</a>
      <a href="lolwc.html">롤챔월드컵</a>
      <a href="chat.html">채팅창</a>
- </div>
-
+  </div class="menu">
 
  </body>
  </html>
