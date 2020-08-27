@@ -10,7 +10,7 @@
 
  H1 {
    font-size:80px;
-   border:5px green solid;
+   border:5px hotpink solid;
    padding:20px;
    margin:20px;
    text-align: center;
@@ -20,26 +20,40 @@
    text-decoration: none;
    font-size:50px;
    text-align:center;
-   border:5px green solid;
+   border:5px hotpink solid;
 }
- a:link {color:black; text-decoration: none;}
- a:visited{color:gray;}
+ a{text-decoration: none;
+
+ }
+
+
  </style>
 </head>
 
 <body>
-
+<div class="full body">
  <h1><a href="index.html">Min_miN</a></h1>
 
+
+테스트 텍스트
+
+
     <input type="button" value="night" onclick="
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.Color = 'white';
+
+    var target = document.querySelector('body');
+
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day';
+
+  }  else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+    }
   ">
 
-    <input type="button" value="day"onclick="
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.Color = 'black';
-  ">
 
 <script>
 
@@ -49,9 +63,27 @@
 
   <div class="menu">
      <a href="photo.html">사진</a>
-     <a href="lolwc.html">롤챔월드컵</a>
+     <a href="http://www.op.gg/">OP.GG</a>
      <a href="chat.html">채팅창</a>
   </div class="menu">
+
+  <input type="button" value="night" onclick="
+
+  var target = document.querySelector('body');
+
+  if(this.value === 'night'){
+    target.style.backgroundColor = 'black';
+    target.style.color = 'white';
+    this.value = 'day';
+
+}  else {
+    target.style.backgroundColor = 'white';
+    target.style.color = 'black';
+    this.value = 'night';
+  }
+">
+
+
 
  </body>
  </html>
