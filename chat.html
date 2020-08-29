@@ -4,6 +4,80 @@
 <head>
 <meta charset="utf-8">
 
-<title>Min_miN_chat</title>
+<title>계산기</title>
 </head>
+
+
+<body>
+  <h1>계산기</h1>
+
+  <table border="1">
+    <tr>
+       <td colspan="4">
+           <input type="text" id="display">
+      </td>
+    </tr>
+    <tr>
+       <td colspan="4">
+         <input type="text" id="result">
+       </td>
+    </tr>
+
+      <button colspan="3" onclick="reset()">AC</button>
+      <button onclick="add('/')">/</button>
+
+       <button onclick="add(7)">7</button>
+       <button onclick="add(8)">8</button>
+       <button onclick="add(9)">9</button>
+       <button onclick="add('*')">*</button>
+
+       <button onclick="add(4)">4</button>
+       <button onclick="add(5)">5</button>
+       <button onclick="add(6)">6</button>
+       <button onclick="add('-')">-</button>
+
+       <button onclick="add(1)">1</button>
+       <button onclick="add(2)">2</button>
+       <button onclick="add(3)">3</button>
+       <button onclick="add('+')">+</button>
+
+       <button colspan="2" onclick="add(0)">0</button>
+       <button onclick="add('.')">.</button>
+       <button onclick="calculate()">=</button>
+
+<button onclick="addOutput(1)">1</button>
+
+
+button
+
+
+   <script>
+        function add(char){
+           var display = document.getElementById('display');
+            display.value = display.value + char;
+        }
+
+        function calculate() {
+          var display = document.getElementById('display');
+          var result = eval(display.value);
+          var displayresult = document.getElementById('#result');
+          display.value = result;
+        }
+        function reset() {
+          document.getElementById('display').value = "";
+          document.getElementById('result').value = "";
+
+        }
+   </script>
+<a href="https://cordelia273.space/32"> 참조 </a>
+
+
+
+
+
+
+
+
+
+</body>
 </html>
