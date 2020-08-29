@@ -5,71 +5,109 @@
 <meta charset="utf-8">
 
 <title>계산기</title>
+
+<style>
+#container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: :center;
+  width:400px;
+  height:1000#;
+
+}
+#container>div{
+  border:2px solid hotpink;
+}
+#display, #result{
+  width:302px;
+  height: 20px;
+  font-size: 60px
+  font-weight:bold;
+  text-align: right;
+  padding-right: 8px;
+}
+.buttonwrap{<
+  display:flex;
+  flex-direction: row;
+}
+.buttonwrap button{
+  width:80px;
+  height: 80px;
+  font-size: 20px;
+  padding: 10px;
+}
+</style>
+
 </head>
 
 
 <body>
   <h1>계산기</h1>
 
-  <table border="1">
-    <tr>
-       <td colspan="4">
-           <input type="text" id="display">
-      </td>
-    </tr>
-    <tr>
-       <td colspan="4">
-         <input type="text" id="result">
-       </td>
-    </tr>
 
-      <button colspan="3" onclick="reset()">AC</button>
-      <button onclick="add('/')">/</button>
+<div id="container">
+   <div>
+     <input id="display" type="text">
+   </div>
+   <div>
+     <input id="result" type="text">
+  </div>
 
-       <button onclick="add(7)">7</button>
-       <button onclick="add(8)">8</button>
-       <button onclick="add(9)">9</button>
-       <button onclick="add('*')">*</button>
+ <div>
+    <div class="buttonwrap">
+     <button onclick="addOutPut('%')"> % </button>
+     <button onclick="reset()">C</button>
+     <button onclick="del()">del</button>
+     <button onclick="addOutPut('/')">/</button>
+   </div>
+   <div class="buttonwrap">
+     <button onclick="addOutPut('7')">7</button>
+     <button onclick="addOutPut('8')">8</button>
+     <button onclick="addOutPut('9')">9</button>
+     <button onclick="addOutPut('*')">*</button>
+   </div>
+   <div class="buttonwrap">
+     <button onclick="addOutPut('4')">4</button>
+     <button onclick="addOutPut('5')">5</button>
+     <button onclick="addOutPut('6')">6</button>
+     <button onclick="addOutPut('+')">+</button>
+    </div>
+    <div class="buttonwrap">
+     <button onclick="addOutPut('1')">1</button>
+     <button onclick="addOutPut('2')">2</button>
+     <button onclick="addOutPut('3')">3</button>
+     <button onclick="addOutPut('-')">-</button>
+  </div>
+   <div class="buttonwrap">
+     <button onclick="addOutPut('0')">0</button>
+     <button onclick="addOutPut('.')">.</button>
+     <button style="width:160px; height:80px;" onclick="calculate('')">=</button>
+    </div>
+   </div>
+ </div>
 
-       <button onclick="add(4)">4</button>
-       <button onclick="add(5)">5</button>
-       <button onclick="add(6)">6</button>
-       <button onclick="add('-')">-</button>
+<script>
+function addOutPut(num){
+  var display = document.getElementById('display')
+  display.value = display.value + num;
+}
 
-       <button onclick="add(1)">1</button>
-       <button onclick="add(2)">2</button>
-       <button onclick="add(3)">3</button>
-       <button onclick="add('+')">+</button>
+ function calculate(){
+   var display = document.getElementById('display');
+   var result=eval(display.value);
+   var displayresult=document.getElementById("result");
+   displayresult.value=result;
+ }
 
-       <button colspan="2" onclick="add(0)">0</button>
-       <button onclick="add('.')">.</button>
-       <button onclick="calculate()">=</button>
-
-<button onclick="addOutput(1)">1</button>
-
-
-button
+ function del(){
+    var display = document.getElementById('display');
+     display.value = display.value.substring(0,display.value.length-1);
+ }
+</script>
 
 
-   <script>
-        function add(char){
-           var display = document.getElementById('display');
-            display.value = display.value + char;
-        }
 
-        function calculate() {
-          var display = document.getElementById('display');
-          var result = eval(display.value);
-          var displayresult = document.getElementById('#result');
-          display.value = result;
-        }
-        function reset() {
-          document.getElementById('display').value = "";
-          document.getElementById('result').value = "";
-
-        }
-   </script>
-<a href="https://cordelia273.space/32"> 참조 </a>
 
 
 
